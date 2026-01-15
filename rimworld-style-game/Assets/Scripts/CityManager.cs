@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 [System.Serializable]
 public class City
@@ -72,7 +73,7 @@ public class CityManager : MonoBehaviour
     
     Vector3 GetValidCityPosition()
     {
-        Vector3 position;
+        Vector3 position = Vector3.zero; // Инициализируем значение по умолчанию
         bool isValid = false;
         int attempts = 0;
         
@@ -177,10 +178,10 @@ public class CityManager : MonoBehaviour
         // Add UI elements (would be better with prefabs in real implementation)
         GameObject titleText = new GameObject("TitleText");
         titleText.transform.SetParent(panel.transform, false);
-        TMPro.TextMeshProUGUI titleTMP = titleText.AddComponent<TMPro.TextMeshProUGUI>();
+        TextMeshProUGUI titleTMP = titleText.AddComponent<TextMeshProUGUI>();
         titleTMP.text = city.name;
         titleTMP.fontSize = 24;
-        titleTMP.alignment = TMPro.TextAlignmentOptions.Center;
+        titleTMP.alignment = TextAlignmentOptions.Center;
         
         RectTransform titleRect = titleText.GetComponent<RectTransform>();
         titleRect.anchorMin = new Vector2(0, 1);
@@ -202,10 +203,10 @@ public class CityManager : MonoBehaviour
         
         GameObject buttonText = new GameObject("ButtonText");
         buttonText.transform.SetParent(enterButton.transform, false);
-        TMPro.TextMeshProUGUI buttonTMP = buttonText.AddComponent<TMPro.TextMeshProUGUI>();
+        TextMeshProUGUI buttonTMP = buttonText.AddComponent<TextMeshProUGUI>();
         buttonTMP.text = "Enter";
         buttonTMP.fontSize = 18;
-        buttonTMP.alignment = TMPro.TextAlignmentOptions.Center;
+        buttonTMP.alignment = TextAlignmentOptions.Center;
         
         RectTransform textRect = buttonText.GetComponent<RectTransform>();
         textRect.anchorMin = Vector2.zero;
