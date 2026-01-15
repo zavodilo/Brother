@@ -1,0 +1,26 @@
+Scene Setup Instructions
+
+WorldScene.unity:
+This is the main world map scene that includes:
+- Main Camera with CameraController component
+- Directional Light for general lighting
+- Empty GameObject named "TerrainGenerator" with TerrainGenerator.cs script
+- Empty GameObject named "CityManager" with CityManager.cs script
+- Canvas with CityIconUpdater.cs script (for updating city icon positions)
+- Empty GameObject named "SceneTransitionManager" with SceneTransitionManager.cs script (with Don't Destroy On Load)
+- EventSystem for UI interactions
+
+CityScene.unity:
+This is the city view scene that includes:
+- Main Camera with CitySceneController.cs script
+- Canvas with CitySceneUI prefab
+- Lighting setup for city view
+- Placeholder objects or generated city layout
+- SceneTransitionManager (from the world scene will persist)
+
+To set up the scenes:
+1. Create new scenes in Unity and save them as "WorldScene" and "CityScene"
+2. Add the listed components to each scene
+3. Assign scene names in the SceneTransitionManager script
+4. Build the scenes in the Build Settings in the correct order
+5. Test the transition between scenes by clicking on city icons

@@ -1,0 +1,18 @@
+Prefab Description: City Icon
+
+This is a UI prefab that represents a city on the world map. It should be set up as follows:
+
+GameObject: CityIcon
+├── RectTransform (anchored to upper left, position updated via script)
+├── CanvasRenderer
+├── Image (for the city icon graphic)
+│   ├── Sprite: Circle or custom city icon
+│   └── Color: Blue or custom color
+├── TextMeshProUGUI (for city name)
+│   ├── Text: City name
+│   └── Font size: 14
+└── CityIconHandler (script component)
+    ├── This handles click events and communicates with CityManager
+
+The CityIconHandler script should be attached to make the icon clickable.
+The position of the icon is updated dynamically by the CityIconUpdater script to match the world position of the city.
