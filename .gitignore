@@ -1,33 +1,28 @@
 ```
-# Unity-specific ignores
+# Dependencies
+Packages/
+
+# Unity specific
 Library/
 Temp/
 Obj/
 Build/
-Logs/
-*.unityproj
-*.sln
-*.csproj
-*.user
-*.userprefs
-*.pidb
-*.booproj
-*.svd
-*.cache
+Builds/
+*.unitypackage
 *.meta
-.vs/
-.idea/
 
-# Build artifacts
-*.exe
-*.dll
-*.so
-*.dylib
+# Logs
+*.log
+**/Logs/
 
-# Environment
-.env
-.env.local
-*.env.*
+# User settings
+.UserSettings/
+Preferences/
+**/ProjectSettings/
+
+# Cache
+**/Cache/
+**/Caches/
 
 # OS generated files
 .DS_Store
