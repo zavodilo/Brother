@@ -35,7 +35,7 @@ public class TerrainGenerator : MonoBehaviour
         
         // Configure terrain settings
         terrain = terrainObject.GetComponent<Terrain>();
-        terrain.materialType = Terrain.MaterialType.BuiltInStandard;
+        terrain.materialTemplate = null; // Use default terrain material
         
         // Add collider for raycasting
         terrain.gameObject.AddComponent<TerrainCollider>();
