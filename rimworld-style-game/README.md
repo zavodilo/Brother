@@ -32,16 +32,15 @@ Assets/
 ## How to Set Up
 
 1. Open the project in Unity 2022.3 or later
-2. Create a new scene named "WorldScene" (this is the main world map scene)
-3. Create a new scene named "CityScene" (for city views)
-4. Add the following GameObjects to the WorldScene:
+2. The scenes "WorldScene.unity" and "CityScene.unity" are already created in the Scenes folder
+3. Add the following GameObjects to the WorldScene:
    - Main Camera with CameraController component
-   - Empty GameObject with TerrainGenerator component
+   - Empty GameObject with TerrainGenerator component (now uses materialTemplate instead of deprecated materialType)
    - Empty GameObject with CityManager component
    - Canvas with CityIconUpdater component
    - Empty GameObject with SceneTransitionManager component
-5. Create a city icon prefab with a UI Image and CityIconHandler component
-6. In the CityScene, add a Camera and CitySceneController component
+4. Create a city icon prefab with a UI Image and CityIconHandler component
+5. In the CityScene, add a Camera and CitySceneController component
 
 ## Camera Controls
 
