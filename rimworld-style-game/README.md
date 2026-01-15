@@ -4,6 +4,8 @@ This Unity project implements a RimWorld-style game with procedural terrain gene
 
 ## Features
 
+- Splash screen with automatic transition to main menu
+- Main menu with start, load, settings, and quit options
 - Procedurally generated terrain with configurable parameters
 - Dynamic city placement system with collision avoidance
 - Interactive camera controls (rotate, zoom, pan)

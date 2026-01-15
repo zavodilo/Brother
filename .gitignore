@@ -1,22 +1,22 @@
 ```
-# Unity specific
+# Unity-specific ignores
 Library/
 Temp/
 Obj/
 Build/
-Builds/
+Logs/
 *.unityproj
+*.userprefs
 *.sln
 *.csproj
-*.userprefs
 *.pidb
-*.svclog
-*.unitypackage
-[LinkData].xml
-upm-project.toml
-AutoBuilder/
-collab/
-DerivedDataCache/
+*.user
+*.userprefs
+*.unity-test-report
+[ResultFile].xml
+upload/
+*.log
+*.tmp
 
 # Build artifacts
 *.dll
@@ -24,19 +24,18 @@ DerivedDataCache/
 *.pdb
 *.meta
 
-# Logs
-*.log
-
 # Environment
 .env
 .env.local
 .env.*
 
+# Dependencies
+Packages/
+node_modules/
+
 # Editors
 .vscode/
 .idea/
-*.swp
-*.swo
 
 # OS generated files
 .DS_Store
