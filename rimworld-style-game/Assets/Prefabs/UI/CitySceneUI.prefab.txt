@@ -1,0 +1,18 @@
+Prefab Description: City Scene UI
+
+This is a UI prefab for the city scene interface. It should include:
+
+GameObject: CitySceneUI
+├── Canvas
+│   ├── Panel (background panel)
+│   │   ├── TitleText (displays city name)
+│   │   │   ├── TextMeshProUGUI
+│   │   │   └── Anchor: Top Center
+│   │   ├── BackButton
+│   │   │   ├── Button component
+│   │   │   ├── Text child with "Back to World" label
+│   │   │   └── OnClick event linked to CitySceneController.ReturnToWorld()
+│   │   └── Other UI elements as needed (resource counters, building info, etc.)
+└── CitySceneController (on root or separate object)
+
+This prefab should be instantiated in the CityScene to provide navigation and information UI elements.
