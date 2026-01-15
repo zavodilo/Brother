@@ -1,5 +1,5 @@
 ```
-# Unity specific ignores
+# Unity specific
 Library/
 Temp/
 Obj/
@@ -8,31 +8,37 @@ Builds/
 *.unityproj
 *.sln
 *.csproj
-*.user
 *.userprefs
 *.pidb
-*.pdb
+*.svclog
 *.unitypackage
-[._]*.sln
-[._]*.csproj
-[._]*.user
-[._]*.userprefs
-[._]*.pidb
-[._]*.pdb
-[._]*
+[LinkData].xml
+upm-project.toml
+AutoBuilder/
+collab/
+DerivedDataCache/
+
+# Build artifacts
+*.dll
+*.exe
+*.pdb
 *.meta
-!*.prefab.meta
-!*.unity.meta
-!*.asset.meta
-!*.mat.meta
-!*.anim.meta
-!*.controller.meta
-!*.physicsMaterial.meta
-!*.fontsettings.meta
-!*.spriteatlas.meta
-!*.asmdef.meta
-!*.rsp.meta
-!*.asmref.meta
+
+# Logs
 *.log
-Lfs.locks
+
+# Environment
+.env
+.env.local
+.env.*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
 ```
