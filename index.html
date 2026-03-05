@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUDUS - Симулятор Ланисты Гладиаторов</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Верхняя панель с ресурсами -->
+        <header id="top-bar">
+            <div class="resource-group">
+                <div class="resource" id="gold-display">
+                    <span class="resource-icon">🪙</span>
+                    <span class="resource-value">0</span>
+                </div>
+                <div class="resource" id="favor-display">
+                    <span class="resource-icon">👑</span>
+                    <span class="resource-value">0</span>
+                </div>
+                <div class="resource" id="provisions-display">
+                    <span class="resource-icon">🍞</span>
+                    <span class="resource-value">0</span>
+                </div>
+                <div class="resource" id="medicine-display">
+                    <span class="resource-icon">🧪</span>
+                    <span class="resource-value">0</span>
+                </div>
+            </div>
+            <div class="time-display">
+                <span id="day-display">День 1</span>
+                <span id="week-display">Неделя 1</span>
+                <span id="weather-display">☀️ Солнечно</span>
+            </div>
+            <div class="reputation-display">
+                <span>Репутация:</span>
+                <span id="reputation-value">0</span>
+                <span>Лига:</span>
+                <span id="league-display">Бронза</span>
+            </div>
+        </header>
+
+        <!-- Основное содержимое -->
+        <main id="main-content">
+            <!-- Левая панель навигации -->
+            <nav id="sidebar">
+                <button class="nav-btn active" data-tab="ludus">🏛️ Лудус</button>
+                <button class="nav-btn" data-tab="gladiators">⚔️ Гладиаторы</button>
+                <button class="nav-btn" data-tab="market">🛒 Рынок рабов</button>
+                <button class="nav-btn" data-tab="contracts">📜 Контракты</button>
+                <button class="nav-btn" data-tab="tournament">🏆 Турнир</button>
+                <button class="nav-btn" data-tab="buildings">🏗️ Постройки</button>
+                <button class="nav-btn" data-tab="equipment">🛡️ Снаряжение</button>
+                <button class="nav-btn" data-tab="rankings">📊 Рейтинг</button>
+                <button class="nav-btn" data-tab="log">📋 Лог событий</button>
+            </nav>
+
+            <!-- Центральная область -->
+            <section id="content-area">
+                <!-- Вкладка Лудус -->
+                <div id="tab-ludus" class="tab-content active">
+                    <h2>Ваш Лудус</h2>
+                    <div class="ludus-overview">
+                        <div class="stat-card">
+                            <h3>Гладиаторы</h3>
+                            <p><span id="gladiator-count">0</span> / <span id="gladiator-capacity">10</span></p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Общая известность</h3>
+                            <p id="total-fame">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Побед</h3>
+                            <p id="total-wins">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Поражений</h3>
+                            <p id="total-losses">0</p>
+                        </div>
+                    </div>
+                    <div class="quick-actions">
+                        <button id="btn-train-all" class="action-btn">📚 Тренировать всех</button>
+                        <button id="btn-heal-all" class="action-btn">🧪 Лечить всех</button>
+                        <button id="btn-refresh-market" class="action-btn">🔄 Обновить рынок (25🪙)</button>
+                        <button id="btn-refresh-contracts" class="action-btn">📜 Обновить контракты (50🪙)</button>
+                    </div>
+                </div>
+
+                <!-- Вкладка Гладиаторы -->
+                <div id="tab-gladiators" class="tab-content">
+                    <h2>Ваши Гладиаторы</h2>
+                    <div id="gladiators-list" class="cards-grid"></div>
+                </div>
+
+                <!-- Вкладка Рынок -->
+                <div id="tab-market" class="tab-content">
+                    <h2>Рынок Рабов</h2>
+                    <div id="market-list" class="cards-grid"></div>
+                </div>
+
+                <!-- Вкладка Контракты -->
+                <div id="tab-contracts" class="tab-content">
+                    <h2>Доступные Контракты</h2>
+                    <div id="contracts-list" class="cards-grid"></div>
+                </div>
+
+                <!-- Вкладка Турнир -->
+                <div id="tab-tournament" class="tab-content">
+                    <h2>Турнир Ланист</h2>
+                    <div id="tournament-info">
+                        <p>Следующий турнир: <span id="next-tournament-day">Воскресенье</span></p>
+                        <button id="btn-register-tournament" class="action-btn">Зарегистрироваться (100🪙)</button>
+                    </div>
+                    <div id="tournament-bracket"></div>
+                </div>
+
+                <!-- Вкладка Постройки -->
+                <div id="tab-buildings" class="tab-content">
+                    <h2>Постройки Лудуса</h2>
+                    <div id="buildings-list" class="cards-grid"></div>
+                </div>
+
+                <!-- Вкладка Снаряжение -->
+                <div id="tab-equipment" class="tab-content">
+                    <h2>Снаряжение</h2>
+                    <div id="equipment-shop"></div>
+                    <div id="equipment-inventory"></div>
+                </div>
+
+                <!-- Вкладка Рейтинг -->
+                <div id="tab-rankings" class="tab-content">
+                    <h2>Рейтинг Ланист</h2>
+                    <div id="lanista-ranking"></div>
+                    <h2>Рейтинг Гладиаторов</h2>
+                    <div id="gladiator-ranking"></div>
+                </div>
+
+                <!-- Вкладка Лог -->
+                <div id="tab-log" class="tab-content">
+                    <h2>Лог Событий</h2>
+                    <div id="event-log"></div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Модальные окна -->
+        <div id="modal-overlay" class="modal-overlay hidden">
+            <div id="modal-content" class="modal-content"></div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
